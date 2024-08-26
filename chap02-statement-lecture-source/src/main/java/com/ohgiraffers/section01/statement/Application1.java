@@ -17,12 +17,14 @@ public class Application1 {
         Statement stmt = null;
 
         try {
+            /* Statement: 쿼리를 운반하고 결과를 반환하는 객체 */
+            // (2) 연결 후 구문 생성 createStatement
             stmt = con.createStatement();
 
-            // (2) 연결 후 구문 생성 createStatement
 
             /* ResultSet: Statement 객체를 통해 조회 처리 된 결과를 다루는 객체 */
             //(3) 실행 : 조회 -> 자바 내에서 ResultSet 타입 반환을 받아 조회
+            // executeQuery > 실행하고 싶은 sql구문 전달
             rset = stmt.executeQuery("SELECT * FROM employee");
 
             /* 결과 행이 존재하는지 확인 */
@@ -30,7 +32,7 @@ public class Application1 {
 
                 /* rset 은 1행을 참조하고 있으므로 해당 행에서 필요한 컬럼을 getXXX 메소드로 타입을 맞춰서 꺼내올 수 있다. */
                 System.out.print(rset.getString("emp_name") + " ");
-                System.out.println(rset.getString("salary"));
+                System.out.println(rset.getInt("salary"));
             }
 
         } catch (SQLException e) {
