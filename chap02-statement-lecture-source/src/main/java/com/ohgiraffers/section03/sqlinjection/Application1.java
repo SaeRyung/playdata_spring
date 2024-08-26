@@ -18,12 +18,13 @@ public class Application1 {
         Statement stmt = null;
         ResultSet rset = null;
 
+        // 입력값 empId, empName 변수화 처리
         String query = "select * from employee where emp_id ='" + empId + "' and emp_name = '" + empName + "'";
 
 
         try {
             stmt = con.createStatement();
-            rset = stmt.executeQuery(query);
+            rset = stmt.executeQuery(query); //실행하는 순간 query 전달
 
             if(rset.next()) {
                 System.out.println(rset.getString("emp_name") + " 님 환영합니다.");

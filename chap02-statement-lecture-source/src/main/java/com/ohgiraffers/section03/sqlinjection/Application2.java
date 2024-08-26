@@ -25,7 +25,7 @@ public class Application2 {
 
         try {
             // 동작 시 내부 체킹을 함께 한다. String 값 하나를 꺼내는 동작
-            pstmt = con.prepareStatement(query);
+            pstmt = con.prepareStatement(query); // 전달된 구문은 파싱되므로 동일한 구문 재요청시 파싱내용을 캐싱하여 쓰기 때문에 성능 좋음.
             pstmt.setString(1, empId);
             pstmt.setString(2, empName);
 
