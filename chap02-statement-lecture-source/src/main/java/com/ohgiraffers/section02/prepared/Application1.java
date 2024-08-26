@@ -13,13 +13,12 @@ public class Application1 {
         ResultSet rset = null;
 
         try {
-            // PreparedStatement : 쿼리를 운반하고 결과를 반환하는 객체
-            // preparedStatement(sql) : 객체 생성 시 수행할 sql 구문이 미리 전달됌
-            pstmt = con.prepareStatement("SELECT * FROM employee");
+            /* PreparedStatement : 쿼리를 운반하고 결과를 반환하는 객체
+             * preparedStatement(sql) : 객체 생성 시 수행할 sql 구문이 미리 전달되어야 한다. */
+            pstmt = con.prepareStatement("SELECT * FROM employee"); // 생성 + 전달
+            /* ResultSet: Statement 객체를 통해 조회 처리 된 결과를 다루는 객체
+            * 객체 생성 시 이미 sql 구문이 전달되었으므로 실행 시에는 전달하지 않는다. */
 
-            // (2) 연결 후 구문 생성 createStatement
-
-            /* ResultSet: Statement 객체를 통해 조회 처리 된 결과를 다루는 객체 */
             //(3) 실행 : 조회 -> 자바 내에서 ResultSet 타입 반환을 받아 조회
             rset = pstmt.executeQuery();
 

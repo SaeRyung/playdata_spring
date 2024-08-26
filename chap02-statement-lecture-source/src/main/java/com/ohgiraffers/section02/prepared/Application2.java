@@ -22,14 +22,16 @@ public class Application2 {
         String empId = sc.nextLine();
         String entYn = "N";
         /* PreparedStatement는 Statement와 달리 placeholder(?)를 활용한 하나의 문자열 형태로 쿼리를 작성한다. */
+        // 완전한 쿼리문이 아님. ? 를 사용하여, 위치만 표기한 문자열을 사용, 나중에 값 넣는다.
         String query = "select emp_id, emp_name from employee where emp_id= ? and ent_yn = ?";
 
         try {
             pstmt = con.prepareStatement(query); // 미리 전달
-            pstmt.setString(1, empId);
-            pstmt.setString(2, entYn);
+            pstmt.setString(1, empId); // 실행 전 사전적으로 값 넣기 필요, 물음표 순서 1번
+            pstmt.setString(2, entYn); // 물음표 순서 2번
 
             rset = pstmt.executeQuery(); // 실행
+            // 실행시점마다 컴파일되기 때문에 더 빠르다.
 
             if(rset.next()) {
                 System.out.println(rset.getString("emp_id") + " " + rset.getString("emp_name"));
