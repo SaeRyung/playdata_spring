@@ -6,6 +6,7 @@ import java.util.Properties;
 
 public class JDBCTemplate {
     // 템플릿화 작업
+    // 반복적으로 호출해야 할 Connection 내용.
     public static Connection getConnection(){
         // Properties 파일 읽어오기
         Properties props = new Properties();
@@ -70,6 +71,9 @@ public class JDBCTemplate {
         }
     }
 
+
+
+// commit , rollback
     public static void commit(Connection con){
         try {
             if(con != null && !con.isClosed()) {

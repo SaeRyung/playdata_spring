@@ -18,10 +18,12 @@ public class MenuRepository {
 
         Properties props = new Properties();
         try {
+            // 쿼리 작성용 XML파일
             props.loadFromXML(new FileInputStream("src/main/java/com/ohgiraffers/section01/insert/mapper/menu-mapper.xml"));
             String sql = props.getProperty("insertMenu");
 
-            ps = con.prepareStatement(sql);
+            ps = con.prepareStatement(sql); // 동작 실행
+
             ps.setString(1, menu.getMenuName());
             ps.setInt(2, menu.getMenuPrice());
             ps.setInt(3, menu.getCategoryCode());

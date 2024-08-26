@@ -4,6 +4,8 @@ import java.awt.*;
 import java.util.Scanner;
 
 /* Service 계층과 Repository 계층을 구분하고 XML 파일로부터 쿼리를 불러와서 insert 해보기 */
+// Repository : DB 연동 기능
+// Service : 비즈니스 로직 수행, 트랜잭션 관리
 public class Application2 {
     public static void main(String[] args) {
         /* view 이자 controller 의 역할 */
