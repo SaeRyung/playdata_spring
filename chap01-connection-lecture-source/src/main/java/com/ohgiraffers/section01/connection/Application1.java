@@ -10,14 +10,14 @@ public class Application1 {
 
         Connection con = null;
         try {
-            /* 문자열로 작성된 class 명칭이 잘 못 되었을 경우 ClassNotFoundExcepionn이 발생할 수 있으므로
+            /* 문자열로 작성된 class 명칭이 잘 못 되었을 경우 ClassNotFoundExcepion이 발생할 수 있으므로
             * Exception handling 한다. */
             // className이 문자열이기에 에러 날 수 있으므로
             Class.forName("com.mysql.cj.jdbc.Driver");
             // Connection: 어떤 dbms 계정과 연동하는지 반환하는 역할
             /* DBMS 연결 정보가 잘못 된 경우 connection 객체 생성이 불가능하므로 SQLException 발생할 수 있다. */
             // !AuthenticationProvider.BadAuthenticationPlugin! : 계정명이 다른 경우 에러
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306","prictice","prictice");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306","prictice","prictice"); //DBMS 연결 역할, 로컬pc 연결
 
             // Connection con 잘 만들어졌는지 확인위한 출력
             System.out.println("con = " + con);
