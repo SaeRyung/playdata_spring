@@ -32,7 +32,7 @@ public class PokemonService {
     public void pokemonAttack(){
         pokemons.forEach((k,v) -> {
             System.out.println(k + " : " + v);
-            v.attack();
+            v.attack(); //value가 가지고 있는 attack 도 함께 출력
         });
     }
 }
