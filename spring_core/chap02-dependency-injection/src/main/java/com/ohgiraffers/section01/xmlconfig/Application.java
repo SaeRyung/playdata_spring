@@ -8,6 +8,8 @@ public class Application {
     public static void main(String[] args) {
         ApplicationContext applicationContext
                 = new GenericXmlApplicationContext("section01/xmlconfig/spring-context.xml");
+        // member 빈은 account빈을 setter로 의존성주입을 받은 상태로 참조.
+        // account 처리 시 실행 잘 된다.
 
         MemberDTO member = applicationContext.getBean("member", MemberDTO.class);
         System.out.println(member.getPersonalAccount().deposit(10000));

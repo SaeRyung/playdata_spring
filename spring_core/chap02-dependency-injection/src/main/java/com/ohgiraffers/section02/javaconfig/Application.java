@@ -16,5 +16,6 @@ public class Application {
         System.out.println(member.getPersonalAccount().getBalance());
         System.out.println(member.getPersonalAccount().withDraw(5000));
         System.out.println(member.getPersonalAccount().getBalance());
+        // Q. getPersonalAccount > PersonalAccount의 get함수?-------------------------
     }
 }

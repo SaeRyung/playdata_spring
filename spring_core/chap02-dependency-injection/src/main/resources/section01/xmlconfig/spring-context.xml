@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+<!--account bean 생성-->
     <bean id="account" class="com.ohgiraffers.common.PersonalAccount">
         <constructor-arg index="0" value="20"/>
         <constructor-arg index="1" value="110-234-567890"/>
@@ -30,5 +30,6 @@
         <property name="phone" value="010-234-5678"/>
         <property name="email" value="hong@gmail.com"/>
         <property name="personalAccount" ref="account"/>
+        <!--생성된 account 빈을 member빈에 setter 메소드 이용해서 주입.-->
     </bean>
 </beans>
