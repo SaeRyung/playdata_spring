@@ -13,6 +13,7 @@ public class BookService {
     private BookDAO bookDAO;
 
     // setter 주입
+    //Q.setter 주입의 개념 다시----------------------
     @Autowired
     public void setBookDAO(BookDAO bookDAO) {
         this.bookDAO = bookDAO;
