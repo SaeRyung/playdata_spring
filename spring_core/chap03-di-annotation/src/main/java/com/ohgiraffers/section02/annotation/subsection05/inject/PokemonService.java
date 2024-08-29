@@ -20,7 +20,7 @@ public class PokemonService {
 
     // 생성자
     @Inject
-    public PokemonService(@Named("pikechu") Pokemon pokemon) {
+    public PokemonService(@Named("pikachu") Pokemon pokemon) {
         this.pokemon = pokemon;
     }
 
