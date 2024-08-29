@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /* 컴포넌트 스캔을 통해 빈으로 등록 될 수 있도록 함 */
+//@Component -> ioc container가 스캔하여 빈으로 등록된다.
 @Component
 public class MemberDAO {
 

@@ -6,11 +6,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Application {
     public static void main(String[] args) {
         ApplicationContext applicationContext
+                // AnnotationConfigApplicationContext: ioc container
                 = new AnnotationConfigApplicationContext(ConfigurationContext.class);
 
         String[] beanNames = applicationContext.getBeanDefinitionNames();
-        for(String beanName : beanNames) {
-            System.out.println("beanName: " + beanName);
+        for(String beanNameee : beanNames) {
+            System.out.println("beanName: " + beanNameee);
         }
     }
 }
