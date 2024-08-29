@@ -7,4 +7,5 @@ public interface BookDAO {
     List<BookDTO> selectBookList();
     /* 도서 번호로 도서 조회 */
     BookDTO selectOneBook(int sequence);
+    //Q 인터페이스 BookDTO 타입 선언?----------
 }
