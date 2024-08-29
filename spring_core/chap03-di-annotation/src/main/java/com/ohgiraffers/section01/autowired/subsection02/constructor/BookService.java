@@ -12,6 +12,7 @@ public class BookService {
 
     // BookDAO 클래스를 의존
     public BookDAO bookDAO;
+//    public final BookDAO bookDAO; -> 생성자 주입은 final 가능하다.
 
     // 기본생성자 2개이면 뭘로 생성할지 정해지지 않았기에 에러,
 //    public BookService(){}

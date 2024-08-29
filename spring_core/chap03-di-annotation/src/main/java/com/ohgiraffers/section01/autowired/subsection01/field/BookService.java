@@ -23,7 +23,8 @@ public class BookService {
     // @Autowired: ioc에게 알려줌. 자동으로 BookDAO 빈 객체 있으면 넣어라. 의존성 주입해 주세요!
     // 의존성 주입 가장 대표적 어노테이션, 위치에 붙느냐에 따라 어떤 주입이다 라고 한다.
     @Autowired //-> 필드주입, 해당타입이 의존성 주입이 되어 있을 것이다.
-    public BookDAO bookDAO;
+    public /*final*/ BookDAO bookDAO; //선언과 동시에 초기화 안되기때문에 final 불가능
+    // 필드, 새터 주입은 final 불가능
 
     public List<BookDTO> selectAllBooks(){
         return bookDAO.selectBookList();
