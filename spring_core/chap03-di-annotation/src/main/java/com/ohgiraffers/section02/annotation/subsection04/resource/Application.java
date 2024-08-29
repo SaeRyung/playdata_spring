@@ -8,7 +8,8 @@ public class Application {
         ApplicationContext applicationContext
                 = new AnnotationConfigApplicationContext("com.ohgiraffers.section02");
 
-        PokemonService pokemonService = (PokemonService) applicationContext.getBean("pokemonServiceResource", PokemonService.class);
+        PokemonService pokemonService
+                = applicationContext.getBean("pokemonServiceResource", PokemonService.class);
         pokemonService.pokemonAttack();
     }
 }

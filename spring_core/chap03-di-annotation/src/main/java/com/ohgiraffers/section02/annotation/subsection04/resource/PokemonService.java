@@ -19,6 +19,7 @@ public class PokemonService {
 
 
     // 새터 주입
+    //name 속성이 없을 경우 type을 통해 의존성을 주입한다
     @Resource(name = "pikachu")
     public void setPokemon(Pokemon pokemon) {
         this.pokemon = pokemon;
