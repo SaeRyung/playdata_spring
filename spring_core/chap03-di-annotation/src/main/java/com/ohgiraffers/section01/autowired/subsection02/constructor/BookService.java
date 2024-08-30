@@ -11,6 +11,8 @@ import java.util.List;
 public class BookService {
 
     // BookDAO 클래스를 의존
+    // 상위타입으로 선언하여 BookDAO를 상속받은 BookDAOImpl 기능 사용X
+    // 오버라이딩 한것이 아닌 단지 BookDAO 사용만을 위해 선언
     public BookDAO bookDAO;
 //    public final BookDAO bookDAO; -> 생성자 주입은 final 가능하다.
 
