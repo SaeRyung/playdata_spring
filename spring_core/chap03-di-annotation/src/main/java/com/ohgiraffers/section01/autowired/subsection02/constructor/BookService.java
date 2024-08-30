@@ -27,6 +27,11 @@ public class BookService {
     public BookService(BookDAO bookDAO) {
         this.bookDAO = bookDAO;
     }
+    /* 해당 객체가 어떤 의존성 가지고 있는지 명확히 알 수 있다. 여러개 받을 때
+    * @Autowired
+    public BookService(A a, B b, C c) {
+        this.bookDAO = bookDAO;
+    }*/
 
     public List<BookDTO> selectAllBooks(){
         return bookDAO.selectBookList();

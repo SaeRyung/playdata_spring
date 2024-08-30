@@ -10,7 +10,7 @@ import java.util.List;
 @Service("bookServiceSetter")
 public class BookService {
 
-    private BookDAO bookDAO;
+    private /*final*/ BookDAO bookDAO; //생성과 동시에 초기화x
 
     // setter 주입
     //Q.setter 주입의 개념 다시----------------------

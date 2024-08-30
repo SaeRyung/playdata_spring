@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Application {
     public static void main(String[] args) {
         ApplicationContext applicationContext
-                // 스캔해서, 문자열로 ..
+                // 스캔해서, 문자열로 ..> 이 경로를 베이스패키지로 해서 컴포넌트스캔해서 ioc 컨테이너 만든다.
                 = new AnnotationConfigApplicationContext("com.ohgiraffers.section01");
 
         //북서비스 꺼내기
