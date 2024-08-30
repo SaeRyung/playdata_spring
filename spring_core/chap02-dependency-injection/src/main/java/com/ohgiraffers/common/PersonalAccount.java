@@ -1,7 +1,7 @@
 package com.ohgiraffers.common;
 
 import lombok.RequiredArgsConstructor;
-
+//@RequiredArgsConstructor: final이 붙어있는 값은 argument로 전달받는다.
 @RequiredArgsConstructor
 public class PersonalAccount implements Account {
 

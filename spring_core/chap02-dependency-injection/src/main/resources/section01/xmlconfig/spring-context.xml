@@ -11,7 +11,7 @@
     <!-- 생성 된 다른 bean을 의존성 주입할 경우 value 속성이 아닌 ref 속성을 사용하여 bean id를 전달 -->
 
     <!-- 1. 생성자 주입-->
-    <!--new MemberDTO(1, "", "", "", "")-->
+    <!--new MemberDTO(1, "", "", "", account)-->
 <!--    <bean id="member" class="com.ohgiraffers.common.MemberDTO">-->
 <!--        <constructor-arg name="sequence" value="1"/>-->
 <!--        <constructor-arg name="name" value="홍길동"/>-->

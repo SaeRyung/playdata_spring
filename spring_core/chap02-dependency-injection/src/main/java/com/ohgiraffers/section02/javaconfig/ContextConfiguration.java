@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 public class ContextConfiguration {
 
     @Bean
+    // 반환형일때 등록하고 싶은 타입 입력
     public Account accountGenerator(){
-        // Q. 매개변수 2개 입력?------------------
         return new PersonalAccount(20, "110-234-567890");
     }
 

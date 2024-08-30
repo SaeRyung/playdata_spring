@@ -1,5 +1,5 @@
 package com.ohgiraffers.section02.javaconfig;
-
+// 의존성 주입 > 자바코드로
 import com.ohgiraffers.common.MemberDTO;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
