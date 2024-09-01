@@ -9,11 +9,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
+// 해더 정보 요청
 @WebServlet("/headers")
 public class RequestHeaderPrintServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // F12 -> Network 창에서 확인 가능
         /* accept : 요청을 보낼 때 서버에게 요청할 응답 타입 명시
          * accept-encoding : 응답 시 원하는 인코딩 방식
          * accept-language : 웅답 시 원하는 언어
@@ -28,6 +30,9 @@ public class RequestHeaderPrintServlet extends HttpServlet {
          * upgrade-insecure-requests
          * user-agent : 현재 사용자가 어떤 클라이언트(OS, browser 포함)을 이용해 보낸 요청인지 명시
          * */
+
+        // Enumeration: iterator 구버전 _ iterator:다음값 있는지 확인하여 커서 이동하면 다음값 가져오기.
+        // Header의 이름값 가져오기
         Enumeration<String> headerNames = req.getHeaderNames();
         while(headerNames.hasMoreElements()) {
             System.out.println(headerNames.nextElement());
