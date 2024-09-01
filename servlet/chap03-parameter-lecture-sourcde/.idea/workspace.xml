@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71989f6-0dcb-4e61-8f57-bb96bf96fbee" name="Changes" comment="[servlet]chap02-service-method 학습">
+    <list default="true" id="6544bf23-ea48-4d32-b2d8-3a77620bb2f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap07-forward-lecture-source/src/main/java/org/ohgiraffers/chap07/section01/forward/PrintLoginSuccessServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap07-forward-lecture-source/src/main/java/org/ohgiraffers/chap07/section01/forward/ReceiveInformationServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap08-redirect-lecture-source/src/main/java/org/ohgiraffers/chap08/section01/othersite/OtherSiteRedirectServlet.java" afterDir="false" />
@@ -23,6 +40,7 @@
       <change afterPath="$PROJECT_DIR$/../chap11-filter-lecture-source/src/main/java/org/ohgiraffers/chap11/section02/uses/RequestWrapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap12-listener-lecture-source/src/main/java/org/ohgiraffers/chap12/section01/ContextListenerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap12-listener-lecture-source/src/main/java/org/ohgiraffers/chap12/section01/ContextListenerTestServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chap02-service-method-lecture-source/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chap02-service-method-lecture-source/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,15 +82,15 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="2lDqoUiXufKbhm1AfXUCDSaBY0d" />
+  <component name="ProjectId" id="2lDwA4BNuIcYn1yUDWAGjNDxXNo" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Build chap02-service-method-lecture-source.executor": "Run",
+    "Gradle.Build chap03-parameter-lecture-sourcde.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 10.1.28.executor": "Run",
     "git-widget-placeholder": "main",
@@ -88,13 +106,13 @@
 }]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="chap02-service-method-lecture-source" />
+      <module name="chap03-parameter-lecture-sourcde" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="chap02-service-method-lecture-source" />
+      <module name="chap03-parameter-lecture-sourcde" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -104,14 +122,14 @@
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
-        <artifact name="Gradle : org.ohgiraffers : chap02-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : org.ohgiraffers : chap03-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="f423da92-c4b2-4356-bfec-d194622780a2" />
+        <option name="BASE_DIRECTORY_NAME" value="d7a40727-52d2-4d6d-9774-0ce1794667f1" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -119,7 +137,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59165" />
+        <option name="DEBUG_PORT" value="59920" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -184,7 +202,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : org.ohgiraffers : chap02-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : org.ohgiraffers : chap03-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -200,31 +218,19 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c71989f6-0dcb-4e61-8f57-bb96bf96fbee" name="Changes" comment="" />
-      <created>1724725176225</created>
+      <changelist id="6544bf23-ea48-4d32-b2d8-3a77620bb2f9" name="Changes" comment="" />
+      <created>1724727808844</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1724725176225</updated>
-      <workItem from="1724725177306" duration="2138000" />
-      <workItem from="1724742526100" duration="23000" />
-      <workItem from="1725201813622" duration="2722000" />
+      <updated>1724727808844</updated>
+      <workItem from="1724727809906" duration="2017000" />
+      <workItem from="1724742656249" duration="3602000" />
+      <workItem from="1724748531160" duration="1342000" />
+      <workItem from="1725204543122" duration="2808000" />
     </task>
-    <task id="LOCAL-00001" summary="[servlet]chap02-service-method 학습">
-      <option name="closed" value="true" />
-      <created>1725204488702</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1725204488702</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="[servlet]chap02-service-method 학습" />
-    <option name="LAST_COMMIT_MESSAGE" value="[servlet]chap02-service-method 학습" />
   </component>
 </project>
