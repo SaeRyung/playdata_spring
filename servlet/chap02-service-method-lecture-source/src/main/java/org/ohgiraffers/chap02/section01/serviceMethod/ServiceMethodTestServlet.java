@@ -14,6 +14,8 @@ import java.io.IOException;
 public class ServiceMethodTestServlet extends HttpServlet {
 
     @Override
+    // service Method : 요청 발생 시 매번 호출,
+    // 요청이 어떤 방식으로 들어왔는지 판단하여 방식에 맞는 메소드 호출하는 역할
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
         /* Http 프로토콜의 정보를 담고 있는 타입으로 다운 캐스팅 한다. */
         HttpServletRequest request = (HttpServletRequest) req;
@@ -22,9 +24,9 @@ public class ServiceMethodTestServlet extends HttpServlet {
         String httpMethod = request.getMethod(); // 요청 받은 http 메소가 어떤 메소드인지 판단한다.
         System.out.println("httpMethod: " + httpMethod);
 
-        if("GET".equals(httpMethod)) {
+        if("GET".equals(httpMethod)) { //Method가 GET이라면 하단 doGet 메소드 호출
             doGet(request, response);
-        } else if("POST".equals(httpMethod)) {
+        } else if("POST".equals(httpMethod)) { //Method가 POST라면 하단 doPOST 호출
             doPost(request, response);
         }
     }
