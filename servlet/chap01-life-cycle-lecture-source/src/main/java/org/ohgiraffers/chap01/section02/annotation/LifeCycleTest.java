@@ -4,7 +4,7 @@ import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
-import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.WebServlet; // annotation > 클래스를 서블릿으로 등록
 import jakarta.servlet.http.HttpServlet;
 
 import java.io.IOException;
