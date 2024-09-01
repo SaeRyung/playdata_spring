@@ -10,6 +10,7 @@
         <servlet-name>xmlmapping</servlet-name>
         <servlet-class>org.ohgiraffers.chap01.section01.xml.LifeCycleTest</servlet-class>
         <load-on-startup>2</load-on-startup>
+        <!--load-on-startup: 순서 기입, 낮을수록 우선순위 -->
     </servlet>
     <!--Servlet Mapping
     <servlet-name>xmlmapping</servlet-name> 으로 위의 서블릿을 맵핑 -->
