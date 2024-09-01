@@ -73,11 +73,11 @@ public class LoggingAspect {
     @Around("logPointcut()")
     public Object logAround(ProceedingJoinPoint joinPoint)throws Throwable{
 
-        System.out.println("around before : " + joinPoint.getSignature());
+        System.out.println("around before : " + joinPoint.getSignature()); // 전처리 확인
 
         Object result = joinPoint.proceed(); //원본 조인 포인트를 실행
 
-        System.out.println("around after : " + joinPoint.getSignature());
+        System.out.println("around after : " + joinPoint.getSignature()); //후처리 확인
 
         return result;
         }

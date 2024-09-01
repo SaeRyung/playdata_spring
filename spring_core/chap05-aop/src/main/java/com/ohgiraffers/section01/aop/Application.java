@@ -13,6 +13,6 @@ public class Application {
         System.out.println("========== selectMembers ==========");
         System.out.println(memberService.selectMembers()); //핵심기능 호출 맴버 조회
         System.out.println("======== selectMember ========");
-        System.out.println(memberService.selectMember(3L)); //핵심기능 맴버 1번 조회
+        System.out.println(memberService.selectMember(1L)); //핵심기능 맴버 1번 조회
     }
 }
