@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+    <!--Web.xml : 배포서술자 / 프로젝트 관련된 설정을 작성할 수 있는 파일 -->
+    <!-- Servlet 등록 -->
+    <servlet>
+        <servlet-name>xmlmapping</servlet-name>
+        <servlet-class>org.ohgiraffers.chap01.section01.xml.LifeCycleTest</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <!--Servlet Mapping-->
+    <servlet-mapping>
+        <servlet-name>xmlmapping</servlet-name>
+        <url-pattern>/xml-lifecycle</url-pattern>
+    </servlet-mapping>
+</web-app>
+
