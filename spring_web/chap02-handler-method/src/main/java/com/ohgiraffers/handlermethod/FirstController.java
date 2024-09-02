@@ -133,7 +133,7 @@ public class FirstController {
     @GetMapping("/logout")
     public String logout(SessionStatus status){
         // "null 님 환영합니다", null값으로
-        status.isComplete();
+        status.setComplete();
         return "first/loginResult";
     }
 
