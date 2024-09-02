@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>loginResult</title>
+</head>
+<body>
+<h1>
+    Session에 담긴 값 확인
+</h1>
+<!-- || 안에 전체 문자열로 설정-->
+<h3 th:text="|${session.id}님 환영합니다.|"></h3>
+<button onclick="location.href='logout'">로그아웃</button>
+</body>
+</html>
