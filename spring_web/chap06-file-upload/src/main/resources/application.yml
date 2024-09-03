@@ -1,0 +1,11 @@
+sping:
+  servlet:
+    multipart:
+      # 같은 경로, 줄 맞춰서 쓰기
+      # 파일 저장 경로
+      location: C:/Users/Playdata/Desktop\playdata/learn_spring/spring_web/chap06-file-upload
+      # 최대 업로드 파일 크기
+      max-file-size: 10MB
+      # 최대 요청 파일 크기
+      max-request-size: 10MB
+

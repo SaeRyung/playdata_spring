@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+</head>
+<body>
+<h1>File Upload Test</h1>
+<!--
+    form 태그의 기본 전송 content type은 application/x-www-form-urlencoded 으로 설정 되어 있으나
+    file을 전송할 경우에는 encoding type(enctype)을 multipart/form-data로 변경해야 한다. > 파일 타입 변경 중요 !!
+-->
+<!-- 파일 한개 전송-->
+<h3>single file upload</h3>
+<form action="single-file" method="post" enctype="multipart/form-data">
+    파일 : <input type="file" name="singleFile"><br>
+    파일 설명 : <input type="text" name="singleFileDescription"><br>
+    <input type="submit">
+</form>
+
+<!-- 파일 여러개 전송-->
+<h3>multi file upload</h3>
+<form action="multi-file" method="post" enctype="multipart/form-data">
+    파일 : <input type="file" name="multiFiles" multiple><br> <!-- multiple: 파일 여러개 컨트롤 누르고 선택 가능하도록 -->
+    파일 설명 : <input type="text" name="multiFilesDescription"><br>
+    <input type="submit">
+</form>
+</body>
+</html>
