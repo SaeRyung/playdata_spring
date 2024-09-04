@@ -26,4 +26,4 @@ configuration: 설정 , 환경과 mapper 넣기.
     </mappers>
 </configuration>
 
-<!-- mybatis 에서 가져온 내용 -->
+<!-- mybatis 에서 가져온 형식 -->
