@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
+// mybatis annotation 방식
+
 public class Application {
 
     // 2. Connection 정보 작성, DB 연결할 정보
