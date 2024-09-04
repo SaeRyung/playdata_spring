@@ -10,9 +10,9 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.mybatis/mybatis
+    // https://mvnrepository.com/artifact/org.mybatis/mybatis > mybatis
     implementation 'org.mybatis:mybatis:3.5.6'
-    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j > sql 할때 반드시 추가
     implementation 'com.mysql:mysql-connector-j:8.3.0'
 
 
