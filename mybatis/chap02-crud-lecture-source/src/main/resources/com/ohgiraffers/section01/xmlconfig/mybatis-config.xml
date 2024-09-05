@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- typeAliases: 별칭을 선언하는 기능, 별칭을 활용하여 선언
+     type 을 alias 에 작성된 별칭 사용하겠다. -->
+    <typeAliases>
+        <typeAlias type="com.ohgiraffers.section01.xmlconfig.MenuDTO" alias="MenuDTO"/>
+    </typeAliases>
+    <!-- menuDB 접근 코드 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/menudb"/>
+                <property name="username" value="swcamp"/>
+                <property name="password" value="swcamp"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!-- mapper : 작성할 쿼리 구문 -->
+        <!-- 아래 리소스를 맵핑, menu-mapper.xml에서 찾아오기-->
+        <mapper resource="com/ohgiraffers/section01/xmlconfig/menu-mapper.xml"/>
+    </mappers>
+</configuration>
+
+<!-- mybatis-config.xml: config 에 등록된 파일, config내용 읽어서 sqlSession 만들어진 후, mapper 찾아오라고 요청하는 역할 -->
