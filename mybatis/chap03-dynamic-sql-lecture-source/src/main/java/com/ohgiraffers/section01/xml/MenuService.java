@@ -116,9 +116,9 @@ public class MenuService {
         DynamicSqlMapper mapper = sqlSession.getMapper(DynamicSqlMapper.class);
 
         int result = mapper.updateMenu(criteria);
-
+        // 수정 된 행의 개수 반환
         if(result > 0){
-            sqlSession.commit();
+            sqlSession.commit(); // result 상태로 commit
             System.out.println("메뉴 정보 변경에 성공하였습니다.");
         }else{
             sqlSession.rollback();

@@ -197,7 +197,7 @@ public class Application {
         String orderableStatus = sc.nextLine();
 
         Map<String, Object> criteria = new HashMap<>();
-        criteria.put("menuCode", menuCode);
+        criteria.put("menuCode", menuCode); // 변경대상 찾기 위한 코드, PK값 바꿀 수 X
         criteria.put("menuName", menuName);
         criteria.put("categoryCode", categoryCode);
         criteria.put("orderableStatus", orderableStatus);

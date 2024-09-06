@@ -36,3 +36,8 @@ configuration 안에 properties 값을 넣는다. => connection-info 읽어올 �
         <!-- ㄴ 해당 패키지 하위에 있는 인터페이스를 매퍼로 등록합니다.-->
     </mappers>
 </configuration>
+
+<!--
+section02 에서 Template > getSqlSession으로 데이터 받아옴
+받아온 데이터 설정은 my-batis-config.xml 에서 진행
+-->

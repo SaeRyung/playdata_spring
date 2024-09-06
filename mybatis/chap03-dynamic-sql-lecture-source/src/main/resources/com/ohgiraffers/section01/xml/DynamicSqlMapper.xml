@@ -145,7 +145,16 @@
 <!--            </if>-->
 <!--        </where>-->
 
-        <!---->
+        <!--
+        해결 방법 2. trim 태그 사용 -> 앞뒤문자 처리하고 싶을 때 ,, 현재 where절과 같은 기능
+        (1) prefix : 처리 후 엘리먼트의 내용이 있으면 붙여주는 접두사
+        ㄴ 안에 내용이 없다면 붙일 필요가 없으므로 작동 X
+        (2) prefixOverrides : 처리 후 엘리먼트의 내용 중 가장 앞에 해당하는 문자를 자동 삭제
+        ㄴ 앞에 만약 이런 문자가 있다면 자동으로 제거하겠다.
+        (3) suffix : 처리 후 엘리먼트의 내용이 있으면 붙여주는 접미사
+        ㄴ 뒤에 쓸데없는게 붙거나, 붙어야 할 때.. 뒤에 붙이는 것
+        (4) suffixOverrides : 처리 후 엘리먼트의 내용 중 가장 뒤에 해당하는 문자를 자동 삭제
+        -->
 
         <trim prefix = "WHERE" prefixOverrides="AND | OR">
             <if test="nameValue != null">
@@ -159,6 +168,9 @@
     </select>
 
 
+    <!--
+    update 필수값은 id만, 파라미터 생략 가능하다.
+    -->
     <update id="updateMenu">
         UPDATE
             tbl_menu
@@ -174,13 +186,31 @@
 <!--            orderable_status = #{ orderableStatus }-->
 <!--        </if>-->
 
+
         <!--
         해결방법 1. set 태그 사용
         (1) SET 구문 작성
         (2) 앞 또는 뒤에 붙는 , 제거
         -->
-        <set>
+<!--        <set>-->
 
+<!--            <if test = "menuName != null and menuName != ''">-->
+<!--                menu_name = #{ menuName },-->
+<!--            </if>-->
+<!--            <if test="categoryCode != null and categoryCode gt 0">-->
+<!--                category_code = #{ categoryCode },-->
+<!--            </if>-->
+<!--            <if test="orderableStatus != null and orderableStatus != ''">-->
+<!--                orderable_status = #{ orderableStatus }-->
+<!--            </if>-->
+<!--        </set>-->
+
+
+
+        <!--
+        해결 방법 2. trim 태그 사용
+        -->
+        <trim prefix="SET" suffixOverrides=",">
             <if test = "menuName != null and menuName != ''">
                 menu_name = #{ menuName },
             </if>
@@ -190,13 +220,10 @@
             <if test="orderableStatus != null and orderableStatus != ''">
                 orderable_status = #{ orderableStatus }
             </if>
-        </set>
-        <!-- 해결 방법 2. trim 태그 사용-->
-        <trim prefix="SET" suffixOverrides=",">
-            <if test="categoryCode != null and categoryCode gt 0">
-                category_code = #{ categoryCode }
-            </if>
         </trim>
+
+
+
         WHERE menu_code = #{ menuCode }
     </update>
 

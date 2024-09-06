@@ -2,9 +2,10 @@ package com.ohgiraffers.section02.provider;
 
 import com.ohgiraffers.common.MenuDTO;
 import com.ohgiraffers.common.SearchCriteria;
-import org.apache.ibatis.jdbc.SelectBuilder;
 
 import java.util.Scanner;
+
+// 자바로 sql 구문을 만들 때 구문을 build하는 동작을 가진 기능 살펴보기
 
 public class Application {
     public static void main(String[] args) {
@@ -30,7 +31,6 @@ public class Application {
     private static void selectBuilderSubMenu() {
         Scanner sc = new Scanner(System.in);
         SelectBuilderService selectBuilderService = new SelectBuilderService();
-
         do {
             System.out.println("===== SelectBuilder 서브 메뉴 =====");
             System.out.println("1. SelectBuilder 기본 구문 사용");
@@ -40,15 +40,14 @@ public class Application {
             int no = sc.nextInt();
 
             switch (no) {
-                case 1 : selectBuilderService.testSimpleStatement();
-                    break;
-                case 2 : selectBuilderService.testDynamicStatement(inputSearchCriteria());
-                    break;
+                case 1 : selectBuilderService.testSimpleStatement(); break;
+                case 2 : selectBuilderService.testDynamicStatement(inputSearchCriteria()); break;
                 case 9 : return;
             }
 
         } while(true);
     }
+
 
     private static SearchCriteria inputSearchCriteria() {
 
@@ -61,8 +60,10 @@ public class Application {
         return new SearchCriteria(condition, value);
     }
 
+
     private static void sqlBuilderSubMenu() {
         Scanner sc = new Scanner(System.in);
+        SqlBuilderService sqlBuilderService = new SqlBuilderService();
 
         do {
             System.out.println("===== SqlBuilder 서브 메뉴 =====");
@@ -74,9 +75,9 @@ public class Application {
             int no = sc.nextInt();
 
             switch (no) {
-                case 1 : break;
-                case 2 : break;
-                case 3 : break;
+                case 1 : sqlBuilderService.registMenu(inputNewMenu()); break;
+                case 2 : sqlBuilderService.modifyMenu(inputModifyMenu()); break;
+                case 3 : sqlBuilderService.deleteMenu(inputMenuCode()); break;
                 case 9 : return;
             }
 
