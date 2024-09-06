@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="config/connection-info.properties"/>
+    <!-- ㄴ연결 정보는 프로퍼티 파일에서 가져온 값으로 구성된다.  -->
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="jdbcTypeForNull" value="NULL"/>
+        <!-- ㄴ 문자열 NULL이 아닌 자바의 NULL값으로 취급되도록 설정 -->
+    </settings>
+
+    <!-- typeAliases: 별칭 정의 -->
+    <typeAliases>
+        <typeAlias type="com.ohgiraffers.section01.xmlmapper.MenuDTO" alias="MenuDTO"/>
+        <typeAlias type="com.ohgiraffers.section01.xmlmapper.CategoryDTO" alias="CategoryDTO"/>
+        <typeAlias type="com.ohgiraffers.section01.xmlmapper.MenuAndCategoryDTO" alias="MenuAndCategoryDTO"/>
+        <typeAlias type="com.ohgiraffers.section01.xmlmapper.CategoryAndMenuDTO" alias="CategoryAndMenuDTO"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <package name="com.ohgiraffers.section01.xmlmapper"/>
+        <!-- ㄴ 사용할 매퍼는 패키지 하위에 있는 파일 등록 -->
+    </mappers>
+</configuration>

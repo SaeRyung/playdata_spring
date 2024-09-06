@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.section01.xmlmapper.ElementTestMapper">
+
+    <!--
+    ** resultMap 사용하는 상황 테스트
+     - 상속이 가능하다.
+     -->
+
+    <!--  1. <resultMap> 테스트 : extend 확장 -->
+
+    <!--
+    id
+    type : mybatis-config.xml 에서 설정한 별칭
+    autoMapping : 자동으로 매핑 여부
+    -->
+
+    <resultMap id="menuResultMap1" type="MenuDTO" autoMapping="false">
+        <id property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <!-- ㄴ 내가 필요한 필드만 선택해서 맵핑할 수 있다. -->
+    </resultMap>
+    <!-- extends로 기존 menuResultMap1을 확장했으므로 추가하고 싶은 속성만 정의 한다. -->
+
+
+    <!-- extends : 상속할 result값,, 필드값 갖고 있고 추가하기 -->
+    <resultMap id="menuResultMap2" type="MenuDTO" extends="menuResultMap1">
+        <result property="categoryCode" column="category_code"/>
+        <result property="orderableStatus" column="orderable_status"/>
+    </resultMap>
+
+<!--
+resultMap="menuResultMap1" 인 경우 선택한 컬럼값만 가져오고 나머지는 0 , NULL 값으로 출력
+resultMap="menuResultMap2" 인 경우 menuResultMap1 에서 상속받은 값과 추가한 값이 출력 => 전체 출력된다.
+ -->
+    <select id="selectResultMapTest" resultMap="menuResultMap1">
+        SELECT
+        menu_code
+        , menu_price
+        , menu_name
+        , category_code
+        , orderable_status
+        FROM tbl_menu
+        WHERE orderable_status = 'Y'
+        ORDER BY menu_code
+    </select>
+
+
+
+
+
+    <!-- 쿼리문을 MenuAndCategoryDTO 형태로 출력하고 싶은 경우 -->
+
+    <!-- 2. <association> : 1:1 관계의 매핑에서 사용 -->
+    <!-- (1) 별도의 resultMap을 사용 : categorydto에 대한 별도의 resultMap이 있을때 사용한다. -->
+    <resultMap id="categoryResultMap" type="CategoryDTO">
+        <!--ㄴ ********** resultMap 있으므로 -->
+        <id property="categoryCode" column="category_code"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="refCategoryCode" column="ref_category_code"/>
+    </resultMap>
+
+    <!-- category는 객체, 구성하는 필드가 있기에 resultMap을 통해  type="CategoryDTO" 로 매핑을 해놓고
+    매핑 결과를 다시 type="MenuAndCategoryDTO" 의 association property="category" 에서 사용하겠다.-->
+
+    <resultMap id="menuAndCategoryResultMap" type="MenuAndCategoryDTO">
+        <id property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <result property="orderableStatus" column="orderable_status"/>
+        <association property="category" resultMap="categoryResultMap"/>
+        <!--association property="category" : 클래스 내 작성해놓았던 필드명,, 배치 위치는 끝으로-->
+    </resultMap>
+
+
+    <!-- (2) <association> 엘리먼트 내에 작성 , 별도 resultMap X-->
+    <resultMap id="menuAndCategoryResultMap2" type="MenuAndCategoryDTO">
+        <id property="menuCode" column="menu_code"/>
+        <result property="menuName" column="menu_name"/>
+        <result property="menuPrice" column="menu_price"/>
+        <result property="orderableStatus" column="orderable_status"/>
+        <association property="category" javaType="CategoryDTO">
+            <!-- association 에 별도 resultMap 을 작성하지 않는 경우  -->
+            <id property="categoryCode" column="category_code"/>
+            <result property="categoryName" column="category_name"/>
+            <result property="refCategoryCode" column="ref_category_code"/>
+        </association>
+    </resultMap>
+
+    <select id="selectResultMapAssociationTest" resultMap="menuAndCategoryResultMap2">
+        SELECT
+        a.menu_code,
+        a.menu_name,
+        a.menu_price,
+        a.orderable_status,
+        b.category_code,
+        b.category_name,
+        b.ref_category_code
+        FROM tbl_menu a
+        JOIN tbl_category b ON (a.category_code = b.category_code)
+        WHERE a.orderable_status = 'Y'
+        ORDER BY a.menu_code
+    </select>
+
+
+
+
+
+
+    <!-- 3. <collection> 엘리먼트는 1:N을 매핑 -->
+    <!-- (1) 별도의 resultMap 사용 -->
+    <resultMap id="categoryAndMenuResultMap" type="CategoryAndMenuDTO">
+        <!-- type 은 ElementTestService의 반환값 타입(=List<CategoryAndMenuDTO> categoryList)이어야 한다.-->
+        <id property="categoryCode" column="category_code"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="refCategoryCode" column="ref_category_code"/>
+        <collection property="menuList" resultMap="menuResultMap2"/>
+        <!--
+        ㄴ property : CategoryAndMenuDTO 클래스에 들어간 필드명으로 작성해야 한다.
+        resultMap="menuResultMap2" ,, menuDTO와 맞춰놓았으므로
+        collection 작성 맨 끝 위치
+         -->
+    </resultMap>
+
+    <!-- (2) <collection> 내부에 작성 , 별도 resultMap X-->
+    <resultMap id="categoryAndMenuResultMap2" type="CategoryAndMenuDTO">
+        <id property="categoryCode" column="category_code"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="refCategoryCode" column="ref_category_code"/>
+        <collection property="menuList" ofType="MenuDTO">
+            <!-- ofType="MenuDTO" 으로 맞춰주기-->
+            <id property="menuCode" column="menu_code"/>
+            <result property="menuName" column="menu_name"/>
+            <result property="menuPrice" column="menu_price"/>
+            <result property="categoryCode" column="category_code"/>
+            <result property="orderableStatus" column="orderable_status"/>
+        </collection>
+    </resultMap>
+
+    <!-- 카테고리 기준으로 존재하는 메뉴 조회 쿼리문 -->
+    <select id="selectResultMapCollectionTest" resultMap="categoryAndMenuResultMap1">
+        SELECT
+        a.category_code,
+        a.category_name,
+        a.ref_category_code,
+        b.menu_code,
+        b.menu_name,
+        b.menu_price,
+        b.orderable_status
+        FROM tbl_category a
+        LEFT JOIN tbl_menu b ON (a.category_code = b.category_code)
+        WHERE b.orderable_status = 'Y'
+        ORDER BY a.category_code
+    </select>
+</mapper>
