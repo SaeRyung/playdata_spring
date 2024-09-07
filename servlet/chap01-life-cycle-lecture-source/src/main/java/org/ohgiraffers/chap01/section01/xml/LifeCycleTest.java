@@ -10,6 +10,10 @@ import java.io.IOException;
 
 public class LifeCycleTest extends HttpServlet {
 
+    /* * 매핑방법
+    1. xml
+     * */
+
     /* 기본 생성자 */
     public LifeCycleTest() {
         System.out.println("xml 생성자 호출");
@@ -22,6 +26,7 @@ public class LifeCycleTest extends HttpServlet {
     }
 
     /* service: 서블릿 컨테이너에 의해 호출 되며 최초 요청 시에는 init 이후 동작, 두 번째 요청부터는 init 없이 바로 동작하는 메소드*/
+    // 기능적인 부분, service 호출
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
         System.out.println("xml 매핑 service 호출");
@@ -33,3 +38,7 @@ public class LifeCycleTest extends HttpServlet {
         System.out.println("xml 매핑 destroy 호출");
     }
 }
+
+// 최초 호출 시 LifeCycleTest - init - service 호출
+// 새로고침 시 service 호출 > 이미 요청 된 상태에서 기능적 호출
+// 종료 시 destroy 호출 > 회수

@@ -9,9 +9,15 @@ import jakarta.servlet.http.HttpServlet;
 
 import java.io.IOException;
 
+/* * 매핑방법
+    2. annotation
+     * */
+
 /* loadOnStartup: 서버 시작 시점에 인스턴스 생성 및 초기화 메소드 호출
 * 전달하는 숫자는 우선 순위로 숫자가 낮을 수록 우선 순위가 높다. */
 @WebServlet(value = "/annotation-lifecycle", loadOnStartup = 1)
+// 클래스가 서블릿과 연결되었다.
+//ㄴ index.jsp에서 요청 시 응답할 수 있는 WebServlet template, 템플릿 안에서 메세지 응답한다.
 public class LifeCycleTest extends HttpServlet {
 
     /* 기본 생성자 */

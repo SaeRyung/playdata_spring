@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
-    <!--Web.xml : 배포서술자 / 프로젝트 관련된 설정을 작성할 수 있는 파일 -->
-    <!-- Servlet 등록
+    <!--web.xml : 배포서술자 / 프로젝트 관련된 설정을 작성할 수 있는 파일 -->
+    <!-- 1. Servlet 등록
     xmlmapping 이름으로 서블릿 클래스 등록-->
     <servlet>
         <servlet-name>xmlmapping</servlet-name>
@@ -12,7 +12,7 @@
         <load-on-startup>2</load-on-startup>
         <!--load-on-startup: 순서 기입, 낮을수록 우선순위 -->
     </servlet>
-    <!--Servlet Mapping
+    <!--2. Servlet Mapping
     <servlet-name>xmlmapping</servlet-name> 으로 위의 서블릿을 맵핑 -->
     <servlet-mapping>
         <servlet-name>xmlmapping</servlet-name>
