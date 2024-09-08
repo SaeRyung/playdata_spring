@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.transactional.section01.annotation.MenuMapper">
+
+    <!-- parameterType > 생략 가능 , result는 생략 X-->
+    <select id="selectMenuByMenuCodes"
+            parameterType="hashmap"
+            resultType="Menu">
+        <!--resultType="com.ohgiraffers.springmybatis.section01.factorybean.MenuDTO"-->
+        SELECT
+        menu_code
+        ,menu_name
+        ,menu_price
+        ,category_code
+        ,orderable_status
+        FROM tbl_menu
+        WHERE menu_code IN
+        <foreach collection="menuCodes" item="menuCode" open="(" separator="," close=" )">
+            #{ menuCode }
+        </foreach>
+    </select>
+
+</mapper>
