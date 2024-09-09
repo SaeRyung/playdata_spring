@@ -214,7 +214,7 @@ class EntityLifeCycleTest {
         //then
         Menu expectedMenu = entityManager.find(Menu.class, menuCode);
         // ㄴ clear 했기에 DB에서 다시 find 하기 때문에 새로운 객체 조회되어 생성된다.
-        assertNotEquals(expectedMenu, foundMenu);0
+        assertNotEquals(expectedMenu, foundMenu);
     }
 
 
