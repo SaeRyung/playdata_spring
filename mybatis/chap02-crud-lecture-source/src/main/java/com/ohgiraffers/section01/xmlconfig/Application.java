@@ -92,6 +92,7 @@ public class Application {
         String categoryCode = sc.nextLine();
 
         Map<String, String> parameter = new HashMap<>();
+        parameter.put("menuCode", menuCode);
         parameter.put("menuName", menuName);
         parameter.put("menuPrice", menuPrice);
         parameter.put("categoryCode", categoryCode);
