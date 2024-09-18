@@ -18,8 +18,8 @@ public class EntityManagerCRUD {
         // EntityManager 인스턴스를 생성 (각 기능에서 별도로 EntityManager 요청)
         // 매 기능마다 EntityManager 필요하므로 기능 수행때마다 요청해서 반환
         return entityManager.find(Menu.class, menuCode);
-        // ㄴ 반환타입, find할때 어떤 값을 pk로 사용할지
-        // 조회 : find
+        // ㄴ 반환타입, find할때 어떤 값을 pk로 사용할지 = 특정 엔티티를 기본 키를 기준으로 조회한다.
+        // find : 특정 엔티티 조회
 
 
         // goto -> Test

@@ -14,6 +14,7 @@ public class Menu {
     @Column(name = "menu_code") // 이 필드들이 매핑될 컬럼 정보 전달
     @GeneratedValue(strategy = GenerationType.IDENTITY) // autoincrement 사용할 경우에 사용
     private int menuCode;
+
     @Column(name = "menu_name")
     private String menuName;
     @Column(name = "menu_price")

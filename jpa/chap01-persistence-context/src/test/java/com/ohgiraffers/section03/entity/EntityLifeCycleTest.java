@@ -129,9 +129,9 @@ class EntityLifeCycleTest {
 
         //when
         entityTransaction.begin();
-        Menu foundMenu = entityManager.find(Menu.class, menuCode); //Select
-        entityManager.detach(foundMenu); // 준영속화
-        foundMenu.setMenuPrice(menuPrice); // 준영속화한 데이터 수정
+        Menu foundMenu = entityManager.find(Menu.class, menuCode); //Select, 데이터 찾아놓기
+        entityManager.detach(foundMenu); // 준영속화, 목록에서 제거
+        foundMenu.setMenuPrice(menuPrice); // 준영속화한 데이터(다른 곳으로 꺼낸 데이터) 수정
         // merge : 파라미터로 넘어온 준영속 엔터티 객체의 식별자 값으로 1차 캐시에서 엔터티 객체를 조회한다. => 기존값 수정된다.
         //(없으면 DB에서 조회하여 1차 캐시에 저장한다.)
         // 조회한 영속 엔터티 객체에 준영속 상태의 엔터티 객체의 값을 병합한 뒤 영속 엔터티 객체를 반환한다.
