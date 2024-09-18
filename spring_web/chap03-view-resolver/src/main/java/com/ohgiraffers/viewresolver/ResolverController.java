@@ -17,8 +17,8 @@ public class ResolverController {
         // ㄴ 응답 뷰에서 꺼내서 출력
 
         // String 타입으로 리턴할 경우 논리적인 뷰 이름을 리턴한다.
-        // ViewResolver가 prefix/suffix를 합쳐서 물리적인 뷰를 선택한다. -> Thymeleaf
-        // prefix: /resources/templates  suffix: .html
+        // ViewResolver가 prefix/suffix를 합쳐서 물리적인 뷰를 선택한다. -> Thymeleaf 이용한 viewResolver 사용
+        // prefix: /resources/templates , suffix: .html
         return "result";
         // => /resources/templates/result.html
     }
