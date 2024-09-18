@@ -5,6 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71989f6-0dcb-4e61-8f57-bb96bf96fbee" name="Changes" comment="[servlet]chap02-service-method 학습">
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberRegistDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberRegistService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section01/entity/MemberRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section02/embedded/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section02/embedded/BookRegistDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section02/embedded/BookRegistService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section02/embedded/BookRepositoty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section02/embedded/Price.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section03/compositekey/subsection01/embeddedId/Like.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section03/compositekey/subsection01/embeddedId/LikeBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section03/compositekey/subsection01/embeddedId/LikeCompositeKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section03/compositekey/subsection01/embeddedId/LikeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section03/compositekey/subsection01/embeddedId/LikeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/main/java/com/ohgiraffers/mapping/section03/compositekey/subsection02/idclass/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/test/java/com/ohgiraffers/mapping/section01/entity/MemberRegistServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/test/java/com/ohgiraffers/mapping/section02/embedded/BookRegistServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../jpa/chap02-mapping/src/test/java/com/ohgiraffers/mapping/section03/compositekey/subsection01/embeddedId/LikeBookServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../mybatis/chap02-crud-lecture-source/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap07-forward-lecture-source/src/main/java/org/ohgiraffers/chap07/section01/forward/PrintLoginSuccessServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap07-forward-lecture-source/src/main/java/org/ohgiraffers/chap07/section01/forward/ReceiveInformationServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap08-redirect-lecture-source/src/main/java/org/ohgiraffers/chap08/section01/othersite/OtherSiteRedirectServlet.java" afterDir="false" />
@@ -23,6 +43,20 @@
       <change afterPath="$PROJECT_DIR$/../chap11-filter-lecture-source/src/main/java/org/ohgiraffers/chap11/section02/uses/RequestWrapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap12-listener-lecture-source/src/main/java/org/ohgiraffers/chap12/section01/ContextListenerTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../chap12-listener-lecture-source/src/main/java/org/ohgiraffers/chap12/section01/ContextListenerTestServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring_core/chap04-exception-handler/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JDBC/chap03-crud-lecture-source/src/main/java/com/ohgiraffers/section02/update/MenuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JDBC/chap03-crud-lecture-source/src/main/java/com/ohgiraffers/section02/update/MenuRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatis/chap01-connection-config-lecture-source/src/main/java/com/ohgiraffers/section03/template/Template.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatis/chap01-connection-config-lecture-source/src/main/java/com/ohgiraffers/section03/template/Template.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatis/chap02-crud-lecture-source/src/main/java/com/ohgiraffers/section01/xmlconfig/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatis/chap02-crud-lecture-source/src/main/java/com/ohgiraffers/section01/xmlconfig/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatis/chap02-crud-lecture-source/src/main/resources/com/ohgiraffers/section01/xmlconfig/menu-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatis/chap02-crud-lecture-source/src/main/resources/com/ohgiraffers/section01/xmlconfig/menu-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SelectBuilderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SelectBuilderProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SqlBuilderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/src/main/java/com/ohgiraffers/section02/provider/SqlBuilderProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/src/main/resources/config/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatis/chap03-dynamic-sql-lecture-source/src/main/resources/config/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_web/chap02-handler-method/src/main/java/com/ohgiraffers/handlermethod/FirstController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring_web/chap02-handler-method/src/main/java/com/ohgiraffers/handlermethod/FirstController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_web/chap02-handler-method/src/main/resources/templates/first/searchResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring_web/chap02-handler-method/src/main/resources/templates/first/searchResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_web/chap03-view-resolver/src/main/java/com/ohgiraffers/viewresolver/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring_web/chap03-view-resolver/src/main/java/com/ohgiraffers/viewresolver/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring_web/chap03-view-resolver/src/main/java/com/ohgiraffers/viewresolver/ResolverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring_web/chap03-view-resolver/src/main/java/com/ohgiraffers/viewresolver/ResolverController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +111,7 @@
     "Tomcat Server.Tomcat 10.1.28.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Playdata/Desktop/playdata/learn_spring/servlet/chap03-parameter-lecture-sourcde",
+    "last_opened_file_path": "C:/Users/Playdata/Desktop/playdata/learn_spring/servlet/chap02-service-method-lecture-source",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -208,6 +242,8 @@
       <workItem from="1724725177306" duration="2138000" />
       <workItem from="1724742526100" duration="23000" />
       <workItem from="1725201813622" duration="2722000" />
+      <workItem from="1725945949367" duration="270000" />
+      <workItem from="1725946455047" duration="1695000" />
     </task>
     <task id="LOCAL-00001" summary="[servlet]chap02-service-method 학습">
       <option name="closed" value="true" />
