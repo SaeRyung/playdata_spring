@@ -34,7 +34,7 @@ public class MybatisConfiguration {
     // 컨트롤하고 싶은 기능 있을 때 기재 후 빈 등록
     @Bean
     // 히카리라는 라이브 기능 이름 존재한다.
-    // DB와의 연동할 때 필요한 설정 정보를 넣는 기능
+    // DB와의 연동할 때 필요한 설정 정보를 넣는 기능(=DB와 Application 간의 연결을 효율적으로 관리하는데 사용)
     public HikariDataSource dataSource(){
         HikariDataSource dataSource = new HikariDataSource();
         // 히카리데이터소스 객체의 새터메소드에 존재, 각각의 데이터를 새터메소드에 설정
