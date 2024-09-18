@@ -104,7 +104,7 @@ public class FirstController {
     * 단 @ModelAttribute("key")를 지정하지 않으면 타입이 앞글자를 소문자로하여 저장 된다.
     * 어노테이션 생략도 가능하다. 생략하면 MenuDTO 이름으로 Model에 담긴다. */
     @PostMapping("/search")
-    public String searchMenu(@ModelAttribute("menu") MenuDTO menu){
+    public String searchMenu(@ModelAttribute("menuu") MenuDTO menu){
         return "first/searchResult";
     }
 
