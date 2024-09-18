@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<body>
+<h1>
+    특정 메뉴 조회
+</h1>
+<table>
+    <tr>
+        <td th:text="${menu.menuCode}"></td>
+        <td th:text="${menu.menuName}"></td>
+        <td th:text="${menu.menuPrice}"></td>
+        <td th:text="${menu.categoryCode}"></td>
+        <td th:text="${menu.orderableStatus}"></td>
+    </tr>
+</table>
+<!-- table: 표로, 한칸 나타내기 ,,, thymleaf 문법 사용
+&{menu} -> MenuController model에 저장한 내용-->
+
+</body>
+</html>
