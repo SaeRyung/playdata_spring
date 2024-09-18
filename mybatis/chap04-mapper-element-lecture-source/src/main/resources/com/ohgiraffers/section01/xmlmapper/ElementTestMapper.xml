@@ -6,13 +6,14 @@
 
     <!--
     ** resultMap 사용하는 상황 테스트
+    DB에서 조회한 결과 데이터를 객체에 원하는 객체의 필드에 담아 반환하는 방법 정의
      - 상속이 가능하다.
      -->
 
     <!--  1. <resultMap> 테스트 : extend 확장 -->
 
     <!--
-    id
+    id : 매핑 구문에서 결과 매핑을 사용할 때 구분하기 위한 ID
     type : mybatis-config.xml 에서 설정한 별칭
     autoMapping : 자동으로 매핑 여부
     -->
@@ -73,6 +74,7 @@ resultMap="menuResultMap2" 인 경우 menuResultMap1 에서 상속받은 값과 
         <result property="orderableStatus" column="orderable_status"/>
         <association property="category" resultMap="categoryResultMap"/>
         <!--association property="category" : 클래스 내 작성해놓았던 필드명,, 배치 위치는 끝으로-->
+        <!--association: 부모-자식 긱체간의 관계 매핑, 부모 객체 안에 자식 객체 매핑을 정의한다.-->
     </resultMap>
 
 
@@ -112,7 +114,7 @@ resultMap="menuResultMap2" 인 경우 menuResultMap1 에서 상속받은 값과 
 
     <!-- 3. <collection> 엘리먼트는 1:N을 매핑 -->
     <!-- (1) 별도의 resultMap 사용 -->
-    <resultMap id="categoryAndMenuResultMap" type="CategoryAndMenuDTO">
+    <resultMap id="categoryAndMenuResultMap1" type="CategoryAndMenuDTO">
         <!-- type 은 ElementTestService의 반환값 타입(=List<CategoryAndMenuDTO> categoryList)이어야 한다.-->
         <id property="categoryCode" column="category_code"/>
         <result property="categoryName" column="category_name"/>
