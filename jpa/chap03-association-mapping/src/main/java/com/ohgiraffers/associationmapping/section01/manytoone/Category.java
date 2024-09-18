@@ -15,4 +15,14 @@ public class Category {
     private int categoryCode;
     private String categoryName;
     private Integer refCategoryCode;
+
+
+    public Category(){}
+
+
+    public Category(int categoryCode, String categoryName, Integer refCategoryCode) {
+        this.categoryCode = categoryCode;
+        this.categoryName = categoryName;
+        this.refCategoryCode = refCategoryCode;
+    }
 }
