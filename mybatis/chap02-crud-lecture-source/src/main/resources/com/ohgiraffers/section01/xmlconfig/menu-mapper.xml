@@ -71,7 +71,7 @@
     </insert>
 
 
-    <update id="updateMenu" parameterType="MenuDTO">
+    <update id="modifyMenu" parameterType="MenuDTO">
         UPDATE tbl_menu
         SET
             menu_name = #{ menuName },
