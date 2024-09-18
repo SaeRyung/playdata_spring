@@ -4,6 +4,10 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 //springboot는 ioc 환경이므로 Bean 등록
+
+// Repository : DB에 접근하는 모든 코드가 모여있다.
+// Service : 비즈니스 로직 관련 코드
+
 @Repository
 public class MemberRepository {
 

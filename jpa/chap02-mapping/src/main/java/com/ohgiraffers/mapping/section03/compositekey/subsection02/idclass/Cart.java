@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "tbl_cart")
 @IdClass(CartCompositeKey.class) //Id의 타입입니다 라고 지정
 public class Cart {
-    // @Id 붙여놓은 값은 따로 취급해야한다.
+    // @Id 붙여놓은 값은 따로 취급해야한다. > 복합키 클래스 : CartCompositeKey
 
     @Id
     @Column(name = "cart_owner")
