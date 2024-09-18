@@ -3,6 +3,10 @@ package com.ohgiraffers.section02.provider;
 import com.ohgiraffers.common.MenuDTO;
 import org.apache.ibatis.jdbc.SQL;
 
+// SqlBuilder : 다양한 종류의 SQL 쿼리(SELECT, INSERT, UPDATE, DELETE)를 동적으로 작성할 수 있는 MyBatis 유틸리티 클래스
+// SelectBuilder 와 달리 SqlBuilder는 다양한 SQL 구문을 지원, 더 복잡하고 범용적은 SQL 구문 작성할 때 유용하다.
+// => SELECT뿐만 아니라 INSERT, UPDATE, DELETE 등의 복잡한 쿼리를 처리해야 할 때 사용하는 것이 적합
+
 public class SqlBuilderProvider {
 
     public String insertMenu(MenuDTO menuDTO) {

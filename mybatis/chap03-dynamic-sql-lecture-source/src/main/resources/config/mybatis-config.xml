@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- 접속 정보 -->
+<!--
+접속 정보
+ xml 에서 SqlSessionFactory 빌드하기
+ -->
 
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -32,6 +35,7 @@ configuration 안에 properties 값을 넣는다. => connection-info 읽어올 �
 
     <mappers>
         <package name="com.ohgiraffers.section01.xml"/>
+        <!-- ㄴ DynamicSqlMapper interpace -->
         <package name="com.ohgiraffers.section02.provider"/>
         <!-- ㄴ 해당 패키지 하위에 있는 인터페이스를 매퍼로 등록합니다.-->
     </mappers>

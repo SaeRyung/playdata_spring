@@ -3,7 +3,10 @@ package com.ohgiraffers.section02.provider;
 import com.ohgiraffers.common.SearchCriteria;
 import org.apache.ibatis.jdbc.SQL;
 
-public class SelectBuilderProvider {
+// SelectBuilder : 특정한 SELECT 쿼리를 쉽게 작성하기 위한 MyBatis의 유틸리티 클래스, 주로 @Select 어노테이션과 함께 사용
+// SELECT 구문을 작성하는데 특화 => 단순한 SELECT 쿼리를 구성할 때 사용
+
+public class  SelectBuilderProvider {
 
     // selectAllMenu 메소드 반환값 String
     public String selectAllMenu() {
@@ -23,7 +26,7 @@ public class SelectBuilderProvider {
 
 
     public String searchMenuByNameOrCategory(SearchCriteria searchCriteria) {
-
+        // SQL 클래스의 인스턴스 생성 코드 -> 동적쿼리시 사용
         SQL sql = new SQL();
 
         // SELECT, FROM 변경되지 않으므로 미리 셋팅

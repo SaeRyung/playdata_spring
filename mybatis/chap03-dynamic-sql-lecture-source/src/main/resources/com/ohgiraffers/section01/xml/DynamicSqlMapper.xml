@@ -161,7 +161,7 @@
                 menu_name LIKE CONCAT('%', #{ nameValue }, '%')
             </if>
             <if test="categoryValue != null">
-                AND category_code = #{ nameValue }
+                AND category_code = #{ categoryValue }
             </if>
         </trim>
 
