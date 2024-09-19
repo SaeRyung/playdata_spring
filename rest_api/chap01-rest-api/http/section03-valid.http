@@ -1,0 +1,13 @@
+### 회원 정보 조회 exception 테스트
+GET http://localhost:8080/valid/users/1
+
+### 회원 정보 등록 valid 테스트
+POST http://localhost:8080/valid/users
+Content-Type: application/json
+
+{
+  "id" : "user01",
+  "pwd" : "pass01",
+  "name" : "123456789",
+  "enrollDate": "2024-09-30"
+}
