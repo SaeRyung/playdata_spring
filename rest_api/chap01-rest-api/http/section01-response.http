@@ -1,0 +1,17 @@
+### 문자열 응답
+GET http://localhost:8080/response/hello
+
+### Object 응답
+GET http://localhost:8080/response/message
+
+### List 응답
+GET http://localhost:8080/response/list
+
+### Map 응답
+GET http://localhost:8080/response/map
+
+### file 응답
+GET http://localhost:8080/response/image
+
+### response entity 응답
+GET http://localhost:8080/response/entity
