@@ -1,0 +1,2 @@
+### hateoas 설정 테스트
+GET http://localhost:8080/hateoas/users
