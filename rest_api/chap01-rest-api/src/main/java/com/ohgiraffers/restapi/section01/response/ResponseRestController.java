@@ -12,15 +12,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/* @RestController : 모든 핸들러 메소드에 @ResponseBody가 적용 된 것과 같다. */
+/* @RestController : 모든 핸들러 메소드에 @ResponseBody가 적용 된 것과 같다. => http 응답데이터(body)에 자바 객체 매핑되어 전달 */
 @RestController
 @RequestMapping("/response")
 public class ResponseRestController {
 
     /* 1. 문자열 응답 */
+    // 문자열 타입은 text
     @GetMapping("/hello")
     public String helloWorld() { return "Hello World!"; }
 
+    // 문자열 외 java object 는 json 타입으로 반환된다.
     /* 2. Object 응답 */
     @GetMapping("/message")
     public Message getMessage() { return new Message(200, "메세지를 응답합니다."); }
@@ -40,9 +42,10 @@ public class ResponseRestController {
     }
 
     /* 5. file 응답 */
+    // produces = MediaType.IMAGE_PNG_VALUE : 응답데이터 타입 설정
     @GetMapping(value = "/image", produces = MediaType.IMAGE_PNG_VALUE)
     public byte[] getImage() throws IOException {
-        return getClass().getResourceAsStream("/images/spring.png").readAllBytes();
+        return getClass().getResourceAsStream("/images/wafflegom.png").readAllBytes();
     }
 
     /* 6. ResponseEntity 응답 */

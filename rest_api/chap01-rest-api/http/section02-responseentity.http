@@ -21,8 +21,8 @@ Content-Type: application/json
 
 {
   "pwd" : "pass0101",
-  "name" : "홍길동동동"
+  "name" : "동동이"
 }
 
 ### 특정 user 삭제
-DELETE http://localhost:8080/entity/users/1
+DELETE http://localhost:8080/entity/users/4

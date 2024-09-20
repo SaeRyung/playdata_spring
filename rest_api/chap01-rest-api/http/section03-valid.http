@@ -8,6 +8,6 @@ Content-Type: application/json
 {
   "id" : "user01",
   "pwd" : "pass01",
-  "name" : "123456789",
+  "name" : "쿠로미",
   "enrollDate": "2024-09-30"
 }

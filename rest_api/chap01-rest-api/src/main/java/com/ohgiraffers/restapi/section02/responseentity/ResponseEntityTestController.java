@@ -26,6 +26,7 @@ public class ResponseEntityTestController {
     @GetMapping("/users")
     public ResponseEntity<ResponseMessage> findAllUsers() {
         /* 응답 헤더 설정 */
+        // 응답 헤더 필수는 아니다.
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", StandardCharsets.UTF_8));
         /* 응답 데이터 설정 */
@@ -34,7 +35,7 @@ public class ResponseEntityTestController {
         ResponseMessage responseMessage = new ResponseMessage(200, "조회 성공", responseMap);
         // 성공 시 200 응답
 
-        return new ResponseEntity<>(responseMessage, headers, HttpStatus.OK);
+        return new ResponseEntity<>(responseMessage, headers, HttpStatus.OK); // 세가지 요소 응답 타입
     }
 
     @GetMapping("/users/{userNo}")
@@ -49,6 +50,7 @@ public class ResponseEntityTestController {
         responseMap.put("user", foundUser);
         ResponseMessage responseMessage = new ResponseMessage(200, "조회 성공", responseMap);
 
+        // ResponseEntity 내 메소드로 처리
         return ResponseEntity.ok().headers(headers).body(responseMessage);
 
     }

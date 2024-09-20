@@ -17,6 +17,8 @@ import java.util.*;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+// 서버로부터 받은 응답에 포함된 하이퍼미디어 링크에 따라 클라이언트가 다음 수행액션을 결정할 수 있는 기능 제공
+
 @RestController
 @RequestMapping("/hateoas")
 public class HateoasTestController {
