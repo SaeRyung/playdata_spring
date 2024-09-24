@@ -1,0 +1,20 @@
+spring:
+  ## db config
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/menudb
+    username: swcamp
+    password: swcamp
+
+  ## jpa config
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  token:
+    secret: iTvjj/mfdleC/veFsPpcdTJfZHNC8HQkBx/7mXjto3MbZXdNVg0nYGcIqVpSWscyIozZAopPXDKOoE7BTKH7Kw==
+    expiration_time: 43200000

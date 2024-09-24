@@ -1,0 +1,27 @@
+### 회원 가입
+POST localhost:8080/users
+Content-Type: application/json
+
+{
+  "userId" : "user01",
+  "pwd" : "pass01",
+  "email" : "test@gmail.com",
+  "name" : "홍길동"
+}
+
+### 로그인
+POST localhost:8080/login
+Content-Type: application/json
+
+{
+  "userId" : "user01",
+  "pwd" : "pass01"
+}
+
+### 유저 정보 조회 (인증 된 user이면서 권한이 ADMIN인 경우에만 가능)
+### 1. 토큰 값이 없거나, 올바르지 않은 토큰이 전달 되거나, 토큰 유효 시간이 만료 된 경우
+### 2. 토큰으로 인증은 처리 되었으나 해당 기능을 수행할 권한이 없는 경우 -> 403(인가 실패)
+### 3. 토큰으로 인증 처리도 되고 권한도 있을 경우 -> 정상 수행
+@id = 1
+GET localhost:8080/users/{{id}}
+#Authorization: Bearer
