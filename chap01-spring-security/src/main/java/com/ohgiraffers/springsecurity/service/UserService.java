@@ -5,6 +5,7 @@ import com.ohgiraffers.springsecurity.dto.CreateUserRequest;
 import com.ohgiraffers.springsecurity.dto.UserInfoResponse;
 import com.ohgiraffers.springsecurity.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService {
@@ -38,6 +40,7 @@ public class UserService implements UserDetailsService {
     }
 
     /* 로그인 요청 시 AuthenticationManager를 통해서 호출 될 메소드*/
+    // 로그인 성공했을때
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
         /* 인증 토큰에 담긴 userId가 메소드로 넘어오므로 해당 값을 기준으로 DB에서 조회 한다. */
@@ -48,9 +51,11 @@ public class UserService implements UserDetailsService {
 
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         grantedAuthorities.add(new SimpleGrantedAuthority(loginUser.getUserRole().name()));
+        // 아래 코드 User 권한 맞춰주기 위해, collection
 
         return new User(loginUser.getUserId(), loginUser.getPwd(), grantedAuthorities);
-        // id. pwd, 권한(권한 여러개 가질 수 있으므로 타입은 보통 colletction)
+        // passEncoder 체킹, DB에서 조회된 결과를 담아서 보내준다.
+        // id. pwd, 권한(권한 여러개 가질 수 있으므로 타입은 보통 collection)
     }
 
     public UserInfoResponse getUserInfoById(Long id) {

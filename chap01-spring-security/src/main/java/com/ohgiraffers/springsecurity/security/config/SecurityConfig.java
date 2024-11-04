@@ -41,7 +41,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 // spring security 다룰 때 필요로 하는 설정값 넣아준다.
                 /* spring security 는 모든 요청을 가로채서 인증 되지 않았을 시에 401 에러,
-                * 일단 허용해서 회원가입 페이지 나올 수 있도록 설정한다. permitAll : 전부 허용한다. */
+                 * 일단 허용해서 회원가입 페이지 나올 수 있도록 설정한다. permitAll : 전부 허용한다. */
                 .authorizeHttpRequests(authz -> {
                     authz.requestMatchers(new AntPathRequestMatcher("/users/**", "POST")).permitAll()
                             .requestMatchers(new AntPathRequestMatcher("/users/**", "GET")).hasAnyAuthority("ADMIN")
@@ -55,7 +55,6 @@ public class SecurityConfig {
 
         /* 커스텀 로그인 필터 이전에 JWT 토큰 확인 필터를 설정 */
         http.addFilterBefore(new JwtFilter(jwtUtil), UsernamePasswordAuthenticationFilter.class);
-
 
         /* 커스텀 로그인 필터 추가 */
         //UsernamePasswordAuthenticationFilter 기본적으로 존재하는 인증 담당 필터
@@ -87,6 +86,9 @@ public class SecurityConfig {
     }
 
     // AuthenticationManager : 인증을 전체적으로 매니징한다. 두가지 요소 설정
+    /* UserDetailsService 타입 통해 loadUserByUsername 메서드 호출 -> 전달된 id값이 DB에서 일치하는 id있는지 존재 확인,
+     * 조회 후 Security 다룰 수 있는 type으로 만들어 반환
+     * 반환된 타입 pw가 맞는지 아닌지 확인 후 저장한다. */
     private AuthenticationManager getAuthenticationManager() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(passwordEncoder);

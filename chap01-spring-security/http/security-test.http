@@ -24,4 +24,5 @@ Content-Type: application/json
 ### 3. 토큰으로 인증 처리도 되고 권한도 있을 경우 -> 정상 수행
 @id = 1
 GET localhost:8080/users/{{id}}
-#Authorization: Bearer
+#Authorization: Bearer xoPDqx+ECNmvTKWksRYvG73JfSEnE/YCCqVYNhDRa+XYtG3KQt1FZnssUJ3n7KYl+/YHf/OXnKulEmNM4uG+4Q==
+# ㄴ 토큰의 종류

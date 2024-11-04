@@ -4,7 +4,9 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import java.util.Base64;
 
-// JWT 비밀키 생성 > 비밀키는 정해진 알고리즘에 키를 생성한다.
+// JWT 비밀키 생성 > 서명 들어가야 한다 > 비밀키는 정해진 알고리즘에 키를 생성한다.
+// 비밀키 생성 위한 클래스.
+// 서명에 사용할 키값, 이 클래스만 따로 실행해서 생성함
 
 public class HMACKeyGenerator {
 

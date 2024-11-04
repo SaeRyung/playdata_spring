@@ -52,6 +52,7 @@ class SimpleJPQLRepositoryTest {
     @Test
     void testSelectMultiRowByTypedQuery(){
         List<Menu> menuList = simpleJPQLRepository.selectMultiRowByTypedQuery();
+        System.out.println(menuList);
         assertNotNull(menuList);
 
     }

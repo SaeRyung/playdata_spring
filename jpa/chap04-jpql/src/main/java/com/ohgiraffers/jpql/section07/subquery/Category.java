@@ -16,4 +16,6 @@ public class Category {
     private String categoryName;
     private Integer refCategoryCode;
     // subquery 위해 연관관계 제거
+
+
 }

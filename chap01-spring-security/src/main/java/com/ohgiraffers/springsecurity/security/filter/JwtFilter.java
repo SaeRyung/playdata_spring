@@ -6,6 +6,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,12 +16,11 @@ import java.io.IOException;
 
 /* OncePerRequestFilter를 상속받아 doFilterInternal을 오버라이딩한다. (반드시 한 번만 실행되는 필터)*/
 @Slf4j
+@RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
 
-    private JwtUtil jwtUtil;
+    private final JwtUtil jwtUtil;
 
-    public JwtFilter(JwtUtil jwtUtil) {
-    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -32,7 +32,7 @@ public class JwtFilter extends OncePerRequestFilter {
             String token = authorizationHeader.substring(7);
             log.info("Token: {}", token);
             if(jwtUtil.validateToken(token)) {
-                Authentication authentication = jwtUtil.getAuthentication(token);
+                Authentication authentication = jwtUtil.getAuthentication(token); // 인증이 완료된 토큰 꺼내오기
                 /* 인증이 완료 되었고 이후 인증 필터는 건너 뛰게 된다. */
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }

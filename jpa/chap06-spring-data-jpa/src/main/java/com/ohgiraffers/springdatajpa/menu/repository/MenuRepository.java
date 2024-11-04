@@ -5,7 +5,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
-
+// JpaRepository 를 상속받아 Menu 엔티티 기본 crud를 가진 인터페이스 MenuRepository 를 구현
 public interface MenuRepository extends JpaRepository<Menu, Integer> {
 
     /* 파라미터로 전달 받은 가격을 초과하는 메뉴 목록 조회 */

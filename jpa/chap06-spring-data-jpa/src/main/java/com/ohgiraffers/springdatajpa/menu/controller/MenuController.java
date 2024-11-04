@@ -38,8 +38,8 @@ public class MenuController {
     public String findMenuList(Model model, @PageableDefault Pageable pageable) {
 
         /* 페이징 처리 이전 단순 정렬 */
-/*        List<MenuDTO> menuList = menuService.findMenuList();
-        model.addAttribute("menuList", menuList); */
+//        List<MenuDTO> menuList = menuService.findMenuList();
+//        model.addAttribute("menuList", menuList);
 
         /* 페이징 처리 포함 */
         log.info("pageable : {}", pageable);

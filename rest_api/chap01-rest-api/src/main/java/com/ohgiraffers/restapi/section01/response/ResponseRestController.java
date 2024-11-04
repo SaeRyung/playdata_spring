@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/* @RestController : 모든 핸들러 메소드에 @ResponseBody가 적용 된 것과 같다. => http 응답데이터(body)에 자바 객체 매핑되어 전달 */
+/* @RestController : @ResponseBody + @Controller => http 응답데이터(body)에 자바 객체 매핑되어 전달 */
+/* @RestController : 모든 핸들러 메소드에 @ResponseBody가 적용된 것과 같다. */
 @RestController
 @RequestMapping("/response")
 public class ResponseRestController {

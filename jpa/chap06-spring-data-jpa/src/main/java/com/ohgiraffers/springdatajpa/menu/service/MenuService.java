@@ -38,7 +38,7 @@ public class MenuService {
 
     /* Entity to DTO (DTO to Entity) 작업이 필요하다.
     * 1. 수동 매핑 메소드 작성(toEntity, fromEntity, toDTO, fromDTO...)
-    * 2. 자동 매핑 라이브러리 사용 */
+    * 2. 자동 매핑 라이브러리 사용 : ModelMapper*/
     // 수동, 자동은 선택의 문제이다.
 
     /* 1. findById */

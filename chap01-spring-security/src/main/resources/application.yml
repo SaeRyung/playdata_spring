@@ -16,5 +16,6 @@ spring:
         format_sql: true
 
   token:
-    secret: iTvjj/mfdleC/veFsPpcdTJfZHNC8HQkBx/7mXjto3MbZXdNVg0nYGcIqVpSWscyIozZAopPXDKOoE7BTKH7Kw==
+#    HMACKeyGenerator.java 알고리즘 키값, 따로 실행해서 결과값 가져옴
+    secret: xoPDqx+ECNmvTKWksRYvG73JfSEnE/YCCqVYNhDRa+XYtG3KQt1FZnssUJ3n7KYl+/YHf/OXnKulEmNM4uG+4Q==
     expiration_time: 43200000
